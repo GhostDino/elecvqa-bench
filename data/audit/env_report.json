@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "script": "check_env.py",
+    "version": "1.0"
+  },
+  "gpu": {
+    "torch_version": "2.11.0+cu128",
+    "cuda_available": true,
+    "compute_capability": [
+      12,
+      0
+    ],
+    "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "total_memory_gb": 95.0,
+    "bf16_supported": true,
+    "cap_ok": true,
+    "mem_ok": false,
+    "bf16_ok": true
+  },
+  "packages": {
+    "must_have": {
+      "torch": {
+        "installed": true,
+        "version": "2.11.0+cu128"
+      },
+      "transformers": {
+        "installed": true,
+        "version": "5.14.1"
+      },
+      "accelerate": {
+        "installed": true,
+        "version": "1.14.0"
+      },
+      "peft": {
+        "installed": true,
+        "version": "0.20.0"
+      },
+      "PIL": {
+        "installed": true,
+        "version": "12.3.0"
+      },
+      "datasets": {
+        "installed": true,
+        "version": "5.0.1"
+      },
+      "pyyaml": {
+        "installed": false
+      },
+      "tqdm": {
+        "installed": true,
+        "version": "4.70.0"
+      },
+      "pandas": {
+        "installed": true,
+        "version": "3.0.5"
+      },
+      "numpy": {
+        "installed": true,
+        "version": "2.4.6"
+      },
+      "sklearn": {
+        "installed": true,
+        "version": "1.9.0"
+      },
+      "scipy": {
+        "installed": true,
+        "version": "1.17.1"
+      }
+    },
+    "for_inference": {
+      "vllm": {
+        "installed": false
+      }
+    },
+    "for_training": {
+      "trl": {
+        "installed": true,
+        "version": "1.9.2"
+      },
+      "swift": {
+        "installed": false
+      }
+    },
+    "for_data": {
+      "pycocotools": {
+        "installed": false
+      },
+      "cv2": {
+        "installed": true,
+        "version": "5.0.0"
+      }
+    },
+    "for_quant": {
+      "bitsandbytes": {
+        "installed": true,
+        "version": "0.50.0"
+      }
+    }
+  },
+  "disk": {
+    "path": "/workspace",
+    "free_gb": 42392.4,
+    "total_gb": 42921.7,
+    "free_ok": true
+  },
+  "driver": {
+    "driver_version": "595.71.05",
+    "driver_ok": true
+  },
+  "gate_pass": false,
+  "missing_packages": [
+    "must_have/pyyaml",
+    "for_inference/vllm",
+    "for_training/swift",
+    "for_data/pycocotools"
+  ]
+}

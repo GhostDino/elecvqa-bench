@@ -1,0 +1,796 @@
+{
+  "meta": {
+    "generated_at": "2026-08-19T09:21:08",
+    "script_version": "1.0",
+    "root": "/workspace/elecvqa/data/raw"
+  },
+  "det": {
+    "splits": {
+      "train": {
+        "images_in_json": 7981,
+        "images_on_disk": 7935,
+        "consistent": false,
+        "annotations": 22635,
+        "per_category": {
+          "tower id plate": 198,
+          "yoke": 1343,
+          "yoke suspension": 5270,
+          "stockbridge damper": 5699,
+          "polymer insulator": 2389,
+          "polymer insulator lower shackle": 1460,
+          "polymer insulator upper shackle": 1315,
+          "vari-grip": 846,
+          "lightning rod suspension": 618,
+          "spiral damper": 831,
+          "glass insulator": 2015,
+          "polymer insulator tower shackle": 47,
+          "glass insulator big shackle": 110,
+          "glass insulator small shackle": 128,
+          "glass insulator tower shackle": 98,
+          "lightning rod shackle": 170,
+          "sphere": 26,
+          "spacer": 72
+        }
+      },
+      "val": {
+        "images_in_json": 2626,
+        "images_on_disk": 2626,
+        "consistent": true,
+        "annotations": 6324,
+        "per_category": {
+          "tower id plate": 44,
+          "spiral damper": 189,
+          "lightning rod suspension": 92,
+          "polymer insulator upper shackle": 377,
+          "glass insulator": 963,
+          "polymer insulator lower shackle": 382,
+          "yoke": 318,
+          "yoke suspension": 1250,
+          "stockbridge damper": 1254,
+          "vari-grip": 162,
+          "lightning rod shackle": 25,
+          "glass insulator big shackle": 149,
+          "glass insulator small shackle": 135,
+          "glass insulator tower shackle": 97,
+          "spacer": 22,
+          "polymer insulator tower shackle": 10,
+          "polymer insulator": 855
+        }
+      }
+    },
+    "categories": {
+      "tower id plate": {
+        "train": 198,
+        "val": 44
+      },
+      "yoke": {
+        "train": 1343,
+        "val": 318
+      },
+      "yoke suspension": {
+        "train": 5270,
+        "val": 1250
+      },
+      "stockbridge damper": {
+        "train": 5699,
+        "val": 1254
+      },
+      "polymer insulator": {
+        "train": 2389,
+        "val": 855
+      },
+      "polymer insulator lower shackle": {
+        "train": 1460,
+        "val": 382
+      },
+      "polymer insulator upper shackle": {
+        "train": 1315,
+        "val": 377
+      },
+      "vari-grip": {
+        "train": 846,
+        "val": 162
+      },
+      "lightning rod suspension": {
+        "train": 618,
+        "val": 92
+      },
+      "spiral damper": {
+        "train": 831,
+        "val": 189
+      },
+      "glass insulator": {
+        "train": 2015,
+        "val": 963
+      },
+      "polymer insulator tower shackle": {
+        "train": 47,
+        "val": 10
+      },
+      "glass insulator big shackle": {
+        "train": 110,
+        "val": 149
+      },
+      "glass insulator small shackle": {
+        "train": 128,
+        "val": 135
+      },
+      "glass insulator tower shackle": {
+        "train": 98,
+        "val": 97
+      },
+      "lightning rod shackle": {
+        "train": 170,
+        "val": 25
+      },
+      "sphere": {
+        "train": 26
+      },
+      "spacer": {
+        "train": 72,
+        "val": 22
+      }
+    },
+    "bbox_issues": [],
+    "categories_without_val": [
+      "sphere"
+    ],
+    "n_categories": 18,
+    "flag_category_count": "发现 18 类, 官方文献称 17 类"
+  },
+  "supervised": {
+    "n_assets": 5,
+    "assets": {
+      "glass-insulator": {
+        "splits": {
+          "train": {
+            "total": 1381,
+            "per_label": {
+              "good": 691,
+              "missing-cap": 690
+            }
+          },
+          "val": {
+            "total": 59,
+            "per_label": {
+              "good": 29,
+              "missing-cap": 30
+            }
+          }
+        },
+        "flag_split_anomaly": "OK"
+      },
+      "lightning-rod-suspension": {
+        "splits": {
+          "train": {
+            "total": 658,
+            "per_label": {
+              "good": 348,
+              "rust": 310
+            }
+          },
+          "val": {
+            "total": 251,
+            "per_label": {
+              "good": 231,
+              "rust": 20
+            }
+          }
+        },
+        "flag_split_anomaly": "OK"
+      },
+      "polymer-insulator-upper-shackle": {
+        "splits": {
+          "train": {
+            "total": 1482,
+            "per_label": {
+              "corrosão": 740,
+              "good": 742
+            }
+          },
+          "val": {
+            "total": 64,
+            "per_label": {
+              "good": 31,
+              "rust": 33
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "train": [
+            "corrosão",
+            "normal"
+          ],
+          "val": [
+            "good",
+            "rust"
+          ]
+        }
+      },
+      "vari-grip": {
+        "splits": {
+          "train": {
+            "total": 998,
+            "per_label": {
+              "nest": 350,
+              "good": 358,
+              "rust": 290
+            }
+          },
+          "val": {
+            "total": 281,
+            "per_label": {
+              "nest": 23,
+              "good": 238,
+              "rust": 20
+            }
+          }
+        },
+        "flag_split_anomaly": "OK"
+      },
+      "yoke-suspension": {
+        "splits": {
+          "train": {
+            "total": 589,
+            "per_label": {
+              "good": 299,
+              "rust": 290
+            }
+          },
+          "val": {
+            "total": 5762,
+            "per_label": {
+              "good": 5742,
+              "rust": 20
+            }
+          }
+        },
+        "flag_split_anomaly": "⚠ train(589) 比 val/test(5762) 小 9.8× , 疑似划分反转"
+      }
+    },
+    "parent_id_extraction": {
+      "regex": 11525,
+      "fallback": 0,
+      "failed": 0,
+      "success_rate": 1.0
+    },
+    "crop_short_side": {
+      "min": 84,
+      "p25": 493,
+      "median": 690,
+      "p75": 887,
+      "max": 1080,
+      "n_sampled": 622
+    },
+    "corrupt": [],
+    "n_corrupt": 0
+  },
+  "unsupervised": {
+    "n_assets": 17,
+    "assets": {
+      "damper-preformed": {
+        "splits": {
+          "test": {
+            "total": 204,
+            "per_label": {
+              "good": 204
+            }
+          },
+          "train": {
+            "total": 816,
+            "per_label": {
+              "good": 816
+            }
+          }
+        },
+        "flag_split_anomaly": "OK"
+      },
+      "damper-stockbridge": {
+        "splits": {
+          "test": {
+            "total": 1756,
+            "per_label": {
+              "good": 1738,
+              "rust": 18
+            }
+          },
+          "train": {
+            "total": 5215,
+            "per_label": {
+              "good": 5215
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "rust"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      },
+      "glass-insulator": {
+        "splits": {
+          "test": {
+            "total": 671,
+            "per_label": {
+              "good": 581,
+              "missing-cap": 90
+            }
+          },
+          "train": {
+            "total": 2298,
+            "per_label": {
+              "good": 2298
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "missingcap"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      },
+      "glass-insulator-big-shackle": {
+        "splits": {
+          "test": {
+            "total": 62,
+            "per_label": {
+              "good": 52,
+              "rust": 10
+            }
+          },
+          "train": {
+            "total": 207,
+            "per_label": {
+              "good": 207
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "rust"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      },
+      "glass-insulator-small-shackle": {
+        "splits": {
+          "test": {
+            "total": 54,
+            "per_label": {
+              "good": 53,
+              "nest": 1
+            }
+          },
+          "train": {
+            "total": 210,
+            "per_label": {
+              "good": 210
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "nest"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      },
+      "glass-insulator-tower-shackle": {
+        "splits": {
+          "test": {
+            "total": 37,
+            "per_label": {
+              "good": 30,
+              "rust": 7
+            }
+          },
+          "train": {
+            "total": 165,
+            "per_label": {
+              "good": 165
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "rust"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      },
+      "lightning-rod-shackle": {
+        "splits": {
+          "test": {
+            "total": 34,
+            "per_label": {
+              "good": 30,
+              "rust": 4
+            }
+          },
+          "train": {
+            "total": 165,
+            "per_label": {
+              "good": 165
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "rust"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      },
+      "lightning-rod-suspension": {
+        "splits": {
+          "test": {
+            "total": 167,
+            "per_label": {
+              "good": 117,
+              "rust": 50
+            }
+          },
+          "train": {
+            "total": 462,
+            "per_label": {
+              "good": 462
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "rust"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      },
+      "plate": {
+        "splits": {
+          "test": {
+            "total": 36,
+            "per_label": {
+              "good": 32,
+              "peeling-paint": 4
+            }
+          },
+          "train": {
+            "total": 182,
+            "per_label": {
+              "good": 182
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "peeling-paint"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      },
+      "polymer-insulator": {
+        "splits": {
+          "test": {
+            "total": 627,
+            "per_label": {
+              "good": 605,
+              "torned-up": 22
+            }
+          },
+          "train": {
+            "total": 2421,
+            "per_label": {
+              "good": 2421
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "torned-up"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      },
+      "polymer-insulator-lower-shackle": {
+        "splits": {
+          "test": {
+            "total": 642,
+            "per_label": {
+              "good": 327,
+              "rust": 315
+            }
+          },
+          "train": {
+            "total": 1306,
+            "per_label": {
+              "good": 1306
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "rust"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      },
+      "polymer-insulator-tower-shackle": {
+        "splits": {
+          "test": {
+            "total": 22,
+            "per_label": {
+              "good": 10,
+              "rust": 12
+            }
+          },
+          "train": {
+            "total": 42,
+            "per_label": {
+              "good": 42
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "rust"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      },
+      "polymer-insulator-upper-shackle": {
+        "splits": {
+          "test": {
+            "total": 337,
+            "per_label": {
+              "good": 235,
+              "rust": 102
+            }
+          },
+          "train": {
+            "total": 935,
+            "per_label": {
+              "good": 935
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "rust"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      },
+      "spacer": {
+        "splits": {
+          "test": {
+            "total": 19,
+            "per_label": {
+              "good": 19
+            }
+          },
+          "train": {
+            "total": 75,
+            "per_label": {
+              "good": 75
+            }
+          }
+        },
+        "flag_split_anomaly": "OK"
+      },
+      "vari-grip": {
+        "splits": {
+          "test": {
+            "total": 225,
+            "per_label": {
+              "good": 114,
+              "nest": 63,
+              "rust": 48
+            }
+          },
+          "train": {
+            "total": 477,
+            "per_label": {
+              "good": 477
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "nest",
+            "rust"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      },
+      "yoke": {
+        "splits": {
+          "test": {
+            "total": 332,
+            "per_label": {
+              "good": 332
+            }
+          },
+          "train": {
+            "total": 1329,
+            "per_label": {
+              "good": 1329
+            }
+          }
+        },
+        "flag_split_anomaly": "OK"
+      },
+      "yoke-suspension": {
+        "splits": {
+          "test": {
+            "total": 1256,
+            "per_label": {
+              "good": 1207,
+              "rust": 49
+            }
+          },
+          "train": {
+            "total": 4834,
+            "per_label": {
+              "good": 4834
+            }
+          }
+        },
+        "flag_split_anomaly": "OK",
+        "flag_label_naming": {
+          "test": [
+            "good",
+            "rust"
+          ],
+          "train": [
+            "good"
+          ]
+        }
+      }
+    },
+    "parent_id_extraction": {
+      "regex": 27620,
+      "fallback": 0,
+      "failed": 0,
+      "success_rate": 1.0
+    },
+    "crop_short_side": {
+      "min": 52,
+      "p25": 311,
+      "median": 596,
+      "p75": 852,
+      "max": 1080,
+      "n_sampled": 1277
+    },
+    "corrupt": [],
+    "n_corrupt": 0
+  },
+  "phash": {
+    "n_hashed": 12000,
+    "n_exact_collision_groups": 203,
+    "n_cross_subset_groups": 17,
+    "cross_subset_ratio": 0.00142,
+    "flag": "OK"
+  },
+  "rare_classes": [
+    {
+      "subset": "unsupervised",
+      "asset": "glass-insulator-small-shackle",
+      "label": "nest",
+      "n": 1
+    },
+    {
+      "subset": "unsupervised",
+      "asset": "lightning-rod-shackle",
+      "label": "rust",
+      "n": 4
+    },
+    {
+      "subset": "unsupervised",
+      "asset": "plate",
+      "label": "peeling-paint",
+      "n": 4
+    },
+    {
+      "subset": "unsupervised",
+      "asset": "glass-insulator-tower-shackle",
+      "label": "rust",
+      "n": 7
+    },
+    {
+      "subset": "unsupervised",
+      "asset": "glass-insulator-big-shackle",
+      "label": "rust",
+      "n": 10
+    },
+    {
+      "subset": "unsupervised",
+      "asset": "polymer-insulator-tower-shackle",
+      "label": "rust",
+      "n": 12
+    },
+    {
+      "subset": "unsupervised",
+      "asset": "damper-stockbridge",
+      "label": "rust",
+      "n": 18
+    },
+    {
+      "subset": "unsupervised",
+      "asset": "polymer-insulator",
+      "label": "torned-up",
+      "n": 22
+    }
+  ],
+  "gate_a": {
+    "parent_id_resolvable": {
+      "pass": true,
+      "msg": "父图 ID 反解成功率 100.00%（阈值 95%）"
+    },
+    "no_cross_subset_leak": {
+      "pass": true,
+      "msg": "跨子集近重复占比 0.142%（阈值 1%）"
+    },
+    "no_split_anomaly": {
+      "pass": false,
+      "msg": "检查各资产 train/val 规模是否反转（yoke-suspension 重点看）"
+    },
+    "no_corrupt_files": {
+      "pass": true,
+      "msg": "损坏/零字节文件数"
+    }
+  }
+}

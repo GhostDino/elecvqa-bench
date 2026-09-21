@@ -1,0 +1,255 @@
+# ElecVQA-Bench 实验 DAG
+# 智能体执行契约:
+#   1. 按 depends_on 拓扑序执行; 存在 state/<id>.done 则跳过
+#   2. gate: true 的任务完成后必须停止并向人类汇报
+#   3. 每个任务写 state/<id>.json 摘要; 失败写 state/<id>.failed 并附 traceback
+#   4. 长任务在 tmux 中运行, 会话名 elecvqa_<id>
+
+version: "1.0"
+project_root: /workspace/elecvqa
+default_timeout_min: 120
+default_retries: 1
+
+oom_fallback_ladder:
+  - {key: per_device_train_batch_size, op: halve}
+  - {key: gradient_checkpointing, op: set, value: true}
+  - {key: max_pixels, op: step_down, values: [1048576, 589824, 409600, 262144]}
+  - {key: cutoff_len, op: step_down, values: [8192, 6144, 4096, 3072]}
+  - {key: train_type, op: set, value: qlora}
+  - {op: abort_and_report}
+
+tasks:
+
+  # ==================== Phase 0: 环境 ====================
+  - id: T00_setup
+    desc: 创建 conda 环境并安装依赖
+    cmd: bash scripts/setup_env.sh
+    depends_on: []
+    timeout_min: 90
+
+  - id: T01_check_env
+    desc: 环境验收 (sm_120 / 96GB / bf16 / vLLM 冒烟)
+    cmd: python scripts/check_env.py --out work/audit/env_report.json
+    depends_on: [T00_setup]
+    gate: true
+    gate_prompt: |
+      检查 env_report.json。若 compute_capability != (12,0) 或 显存 < 95GB,
+      说明连错了机器, 停止并汇报。
+
+  # ==================== Phase 0-1: 数据 ====================
+  - id: T10_audit
+    desc: 数据审计, 产出 data card 与 parent_id 映射
+    cmd: >
+      python scripts/audit_dataset.py
+      --root data/raw --out work/audit --phash --check-corrupt
+    depends_on: [T01_check_env]
+    timeout_min: 90
+    gate: true
+    gate_prompt: |
+      汇报以下四项, 等待人类决策:
+      (1) crop -> parent_id 反解成功率 (< 95% 则必须改用 pHash 聚类)
+      (2) yoke-suspension train/val 是否确实为 589/5762
+      (3) 跨子集近重复图像数量与占比
+      (4) 各缺陷类别样本数, 列出 n<30 的类别
+
+  - id: T11_split
+    desc: 按父图 ID 分组的防泄漏划分
+    cmd: >
+      python scripts/build_splits.py
+      --audit work/audit/audit.json --out work/splits
+      --ratios 0.7 0.1 0.2 --seed 42 --min-class-count 5
+    depends_on: [T10_audit]
+
+  - id: T12_verify_splits
+    desc: 划分正确性自动断言 (失败即 exit 1)
+    cmd: python scripts/build_splits.py --verify-only --out work/splits
+    depends_on: [T11_split]
+    gate: true
+    gate_prompt: 断言全过则可继续; 任一失败必须停止, 不要绕过。
+
+  - id: T20_build_crops
+    desc: 生成四种外扩比例的 ROI crop 缓存
+    cmd: >
+      python scripts/build_vqa.py crops
+      --splits work/splits --out work/crops --expand 1.0 1.5 2.0 3.0
+    depends_on: [T12_verify_splits]
+    timeout_min: 120
+
+  - id: T21_build_vqa
+    desc: 构造 T1-T4 四类 QA (默认外扩 2.0, 难负样本 same_asset)
+    cmd: >
+      python scripts/build_vqa.py qa
+      --crops work/crops/expand_2.0 --splits work/splits
+      --tasks T1 T2 T3 --hard-negative same_asset
+      --prompt-version v1 --out work/vqa
+    depends_on: [T20_build_crops]
+
+  - id: T22_build_vqa_t4
+    desc: T4 研判依据数据 (调商用 API 生成推理链初稿)
+    cmd: >
+      python scripts/build_vqa.py t4
+      --crops work/crops/expand_2.0 --n 5000
+      --provider ${T4_API_PROVIDER} --out work/vqa
+    depends_on: [T21_build_vqa]
+    optional: true
+    note: 需要 API key; 先跑 --n 100 抽检通过率再放量
+
+  - id: T25_gold
+    desc: 准备 gold test set 标注包 (600 条, 人类标注)
+    cmd: python scripts/build_vqa.py gold --n 600 --out work/vqa/gold
+    depends_on: [T21_build_vqa]
+    gate: true
+    human_task: true
+    gate_prompt: |
+      标注包已生成。需 2 名持证运维人员独立标注, 完成后运行
+      `python scripts/metrics.py kappa --a work/vqa/gold/ann_A.jsonl --b .../ann_B.jsonl`
+      kappa >= 0.75 方可继续。
+
+  # ==================== Phase 3-4: 基线 ====================
+  - id: T30_cnn_baseline
+    desc: A组 CNN 基线 (ResNet50/EfficientNet-B3/Swin-T/ConvNeXt-T)
+    cmd: >
+      python scripts/train_cnn.py
+      --models resnet50 efficientnet_b3 swin_tiny convnext_tiny
+      --splits work/splits --out runs --seed 42
+    depends_on: [T21_build_vqa]
+    timeout_min: 600
+
+  - id: T40_vlm_zeroshot
+    desc: C组 开源 VLM zero-shot (P1-P4 四档 prompt)
+    cmd: >
+      python scripts/eval_vlm.py
+      --models-config configs/models.yaml --group opensource
+      --tasks T2 T3 --prompts P1 P2 P3 P4
+      --guided-json --smoke 20 --out runs
+    depends_on: [T21_build_vqa]
+    timeout_min: 900
+    gate: true
+    gate_prompt: |
+      查看 T2 的 Balanced Accuracy 与 format_failure_rate:
+      - format_failure_rate > 10% -> 先修 prompt, 不要接受该结果
+      - BalAcc >= 85% -> T2 无区分度, 重心移到 T3/T4, 需人类确认
+      - BalAcc <= 60% -> 排查解析问题后再确认
+      - 60-85% -> 理想, 全速执行
+
+  - id: T41_api_upper_bound
+    desc: D组 闭源上界 (不占 GPU, 可与其他任务并行)
+    cmd: >
+      python scripts/eval_vlm.py
+      --models-config configs/models.yaml --group api
+      --tasks T2 T3 --prompts P1 P2 P3 P4 --out runs
+    depends_on: [T21_build_vqa]
+    parallel_ok: true
+    optional: true
+
+  # ==================== Phase 5: 主实验 ====================
+  - id: T50_sft_main
+    desc: E组 主实验 InternVL3.5-8B + LoRA
+    cmd: >
+      swift sft --config configs/train_lora_internvl35_8b.yaml
+      --output_dir runs/${RUN_ID}/train
+    depends_on: [T40_vlm_zeroshot]
+    timeout_min: 720
+    watchdog: scripts/vram_watchdog.py
+    oom_fallback: true
+
+  - id: T51_preference
+    desc: E-stage3 代价敏感偏好优化 (MPO/DPO)
+    cmd: |
+      python scripts/build_preference_pairs.py \
+        --adapter runs/${T50_RUN_ID}/train --n-sample 4 \
+        --cost-matrix configs/cost_matrix.yaml --out work/vqa/pref.jsonl
+      swift rlhf --rlhf_type dpo --config configs/train_dpo.yaml
+    depends_on: [T50_sft_main]
+    timeout_min: 480
+    oom_fallback: true
+
+  - id: T52_eval_main
+    desc: 主模型全指标评测 (含 bootstrap CI)
+    cmd: >
+      python scripts/eval_vlm.py --adapter runs/${T51_RUN_ID}/train
+      --tasks T2 T3 T4 --prompts P3 P4 --full-metrics --bootstrap 2000
+      --out runs
+    depends_on: [T51_preference]
+
+  # ==================== Phase 6-7: 消融与泛化 ====================
+  - id: T60_scale
+    desc: F组 规模消融 2B / 8B / 27B(QLoRA)
+    cmd: python scripts/run_matrix.py --matrix configs/matrix_scale.yaml
+    depends_on: [T52_eval_main]
+    timeout_min: 1500
+
+  - id: T70_backbone
+    desc: G组 换基座泛化 (Qwen3-VL-8B / Qwen3.8-27B)
+    cmd: python scripts/run_matrix.py --matrix configs/matrix_backbone.yaml
+    depends_on: [T52_eval_main]
+    timeout_min: 1200
+    note: 这一组不能省, 用于挡掉"涨点来自基座"的质疑
+
+  - id: T75_ablation
+    desc: 消融 A1-A5
+    cmd: python scripts/run_matrix.py --matrix configs/matrix_ablation.yaml
+    depends_on: [T52_eval_main]
+    timeout_min: 1200
+    subtasks:
+      - A1: 分辨率 384/512/768/1024
+      - A2: 模块化 LoRA M1(仅LLM)/M2(+MMA)/M3(+ViT lr0.1)/M4(全部)
+      - A3: ROI 外扩比例 1.0/1.5/2.0/3.0
+      - A4: 难负样本 random / same_asset / same_parent
+      - A5: 训练用 P3 + 推理用 P4 的分布不一致验证
+
+  - id: T90_longtail
+    desc: H组 长尾交叉点 (最耗时, 建议夜间无人值守)
+    cmd: >
+      python scripts/run_matrix.py --matrix configs/matrix_longtail.yaml
+      --seeds 41 42 43
+    depends_on: [T52_eval_main]
+    timeout_min: 4000
+    degradation: |
+      时间不够时降级: n 档位保 {4,16,64,all}, 路线保 {ResNet50, InternVL3.5-8B},
+      seed 降为 2。核心图仍然成立。
+
+  # ==================== Phase 8: 量化 ====================
+  - id: T80_probe_fp4
+    desc: sm_120 上 NVFP4 kernel 可用性探针 (5 分钟)
+    cmd: python scripts/probe_fp4.py --out work/audit/fp4_probe.json
+    depends_on: [T01_check_env]
+    timeout_min: 20
+    parallel_ok: true
+    on_failure: continue
+    note: 失败不阻塞, 但会把 T81 的 nvfp4 档位自动摘除
+
+  - id: T81_quant
+    desc: I组 量化部署评估 (精度 / 可靠性 / 效率 三维)
+    cmd: >
+      python scripts/run_quant.py --adapter runs/${T51_RUN_ID}/train
+      --precisions bf16 fp8 nvfp4 awq_int4
+      --probe work/audit/fp4_probe.json
+      --paired-analysis --mcnemar --out runs
+    depends_on: [T52_eval_main, T80_probe_fp4]
+    timeout_min: 600
+
+  # ==================== Phase 9: 跨域 (可选) ====================
+  - id: T95_crossdomain
+    desc: J组 InsPLAD <-> 私有国网数据双向迁移
+    cmd: python scripts/run_matrix.py --matrix configs/matrix_crossdomain.yaml
+    depends_on: [T52_eval_main]
+    optional: true
+    requires_human_input: 私有数据路径与类别映射表
+    timeout_min: 1200
+
+  # ==================== Phase 10: 聚合 ====================
+  - id: T99_aggregate
+    desc: 汇总所有 metrics 到 sqlite, 生成表格与图
+    cmd: |
+      python scripts/aggregate.py --runs runs --db results.sqlite
+      python scripts/make_tables.py --db results.sqlite --out docs/tables
+      python scripts/make_figures.py --db results.sqlite --out results/figures
+    depends_on: [T60_scale, T70_backbone, T75_ablation, T90_longtail, T81_quant]
+
+  - id: T100_report
+    desc: 生成实验报告初稿 (含所有表格/图/复现命令)
+    cmd: python scripts/make_report.py --db results.sqlite --out docs/report.md
+    depends_on: [T99_aggregate]
+    gate: true
+    gate_prompt: 实验全部完成, 请人工审阅报告并决定投稿目标。

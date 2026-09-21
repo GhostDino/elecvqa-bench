@@ -1,0 +1,123 @@
+{
+  "max_pixels": 200704,
+  "min_pixels": 65536,
+  "n": 7284,
+  "macro_recall": 0.8342590505199052,
+  "per_class_recall": {
+    "corrosão": {
+      "n": 184,
+      "correct": 180,
+      "recall": 0.9782608695652174
+    },
+    "good": {
+      "n": 6518,
+      "correct": 6377,
+      "recall": 0.9783675974225222
+    },
+    "missing-cap": {
+      "n": 136,
+      "correct": 115,
+      "recall": 0.8455882352941176
+    },
+    "nest": {
+      "n": 103,
+      "correct": 102,
+      "recall": 0.9902912621359223
+    },
+    "peeling-paint": {
+      "n": 4,
+      "correct": 4,
+      "recall": 1.0
+    },
+    "rust": {
+      "n": 334,
+      "correct": 283,
+      "recall": 0.8473053892215568
+    },
+    "torned-up": {
+      "n": 5,
+      "correct": 1,
+      "recall": 0.2
+    }
+  },
+  "visual_tokens": {
+    "mean": 129.6576057111477,
+    "min": 64,
+    "max": 196,
+    "p50": 144,
+    "unique_values": [
+      64,
+      65,
+      66,
+      70,
+      72,
+      75,
+      77,
+      78,
+      80,
+      81,
+      84,
+      85,
+      88,
+      90,
+      91,
+      96,
+      98,
+      100,
+      102,
+      104,
+      105,
+      110,
+      112,
+      119,
+      120,
+      121,
+      126,
+      128,
+      130,
+      132,
+      133,
+      135,
+      136,
+      140,
+      143,
+      144,
+      150,
+      154,
+      156,
+      160,
+      162,
+      165,
+      168,
+      169,
+      170,
+      171,
+      176,
+      180,
+      182,
+      186,
+      187,
+      189,
+      190,
+      192,
+      195,
+      196
+    ]
+  },
+  "original_width": {
+    "mean": 479.71814936847886,
+    "min": 44,
+    "max": 1920
+  },
+  "original_height": {
+    "mean": 466.2445085118067,
+    "min": 36,
+    "max": 1080
+  },
+  "unique_input_ids_hashes": 205,
+  "unique_pixel_hashes": 5529,
+  "prediction_file": "runs/qwen_pixel_budget_v9/preds_maxpixels_200704.jsonl",
+  "audit_file": "runs/qwen_pixel_budget_v9/input_audit_maxpixels_200704.jsonl",
+  "prediction_sha256": "033dd1a4bf96c7d6f9d96500c0536f0f0a35986df74cc042abb200f36ea28f0b",
+  "elapsed_seconds": 999.3019983768463
+}

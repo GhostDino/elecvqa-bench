@@ -1,0 +1,223 @@
+{
+  "n_total": 7057,
+  "n_multiclass": 5536,
+  "runtime_seconds": 1795.537914640001,
+  "samples_per_second": 3.930298515258534,
+  "mismatch_count": 14,
+  "original_metrics": {
+    "full_seven_macro_recall": 0.7888204827057069,
+    "common_six_macro_recall": 0.8369572298233248,
+    "five_class_excluding_torned_up_macro_recall": 0.9376820091213232,
+    "per_class_recall": {
+      "good": {
+        "n": 5002,
+        "correct": 4992,
+        "recall": 0.998000799680128
+      },
+      "rust": {
+        "n": 273,
+        "correct": 246,
+        "recall": 0.9010989010989011
+      },
+      "nest": {
+        "n": 40,
+        "correct": 40,
+        "recall": 1.0
+      },
+      "peeling-paint": {
+        "n": 2,
+        "correct": 1,
+        "recall": 0.5
+      },
+      "corrosão": {
+        "n": 100,
+        "correct": 91,
+        "recall": 0.91
+      },
+      "missing-cap": {
+        "n": 116,
+        "correct": 102,
+        "recall": 0.8793103448275862
+      },
+      "torned-up": {
+        "n": 3,
+        "correct": 1,
+        "recall": 0.3333333333333333
+      }
+    }
+  },
+  "rerun_metrics": {
+    "full_seven_macro_recall": 0.7895287235617311,
+    "common_six_macro_recall": 0.8377835108220196,
+    "five_class_excluding_torned_up_macro_recall": 0.9386735463197569,
+    "per_class_recall": {
+      "good": {
+        "n": 5002,
+        "correct": 4992,
+        "recall": 0.998000799680128
+      },
+      "rust": {
+        "n": 273,
+        "correct": 245,
+        "recall": 0.8974358974358975
+      },
+      "nest": {
+        "n": 40,
+        "correct": 40,
+        "recall": 1.0
+      },
+      "peeling-paint": {
+        "n": 2,
+        "correct": 1,
+        "recall": 0.5
+      },
+      "corrosão": {
+        "n": 100,
+        "correct": 91,
+        "recall": 0.91
+      },
+      "missing-cap": {
+        "n": 116,
+        "correct": 103,
+        "recall": 0.8879310344827587
+      },
+      "torned-up": {
+        "n": 3,
+        "correct": 1,
+        "recall": 0.3333333333333333
+      }
+    }
+  },
+  "target_samples": [
+    {
+      "index": 3764,
+      "image": "data/raw/unsupervised_anomaly_detection/polymer-insulator/test/torned-up/01-06-2021_DJI_0457_142.jpg",
+      "class": "torned-up",
+      "label": "B",
+      "original_response": "A",
+      "rerun_response": "A"
+    },
+    {
+      "index": 4230,
+      "image": "data/raw/unsupervised_anomaly_detection/polymer-insulator/test/torned-up/01-06-2021_DJI_0456_141.jpg",
+      "class": "torned-up",
+      "label": "B",
+      "original_response": "A",
+      "rerun_response": "A"
+    }
+  ],
+  "response_mismatches": [
+    {
+      "index": 963,
+      "image": "data/raw/unsupervised_anomaly_detection/damper-stockbridge/test/rust/08-06-2021_DJI_0262_364.jpg",
+      "class": "rust",
+      "label": "B",
+      "original_response": "A",
+      "rerun_response": "B"
+    },
+    {
+      "index": 1089,
+      "image": "data/raw/unsupervised_anomaly_detection/polymer-insulator-lower-shackle/test/rust/08-06-2021_DJI_0264_372.jpg",
+      "class": "rust",
+      "label": "B",
+      "original_response": "A",
+      "rerun_response": "B"
+    },
+    {
+      "index": 1164,
+      "image": "data/raw/supervised_fault_classification/defect_supervised/polymer-insulator-upper-shackle/train/corrosão/02-06-2021_DJI_0263_244.jpg",
+      "class": "corrosão",
+      "label": "B",
+      "original_response": "B",
+      "rerun_response": "C"
+    },
+    {
+      "index": 1748,
+      "image": "data/raw/supervised_fault_classification/defect_supervised/polymer-insulator-upper-shackle/train/corrosão/02-06-2021_DJI_0527_275_5.jpg",
+      "class": "corrosão",
+      "label": "B",
+      "original_response": "B",
+      "rerun_response": "C"
+    },
+    {
+      "index": 2287,
+      "image": "data/raw/supervised_fault_classification/defect_supervised/polymer-insulator-upper-shackle/train/corrosão/02-06-2021_DJI_0528_276.jpg",
+      "class": "corrosão",
+      "label": "B",
+      "original_response": "C",
+      "rerun_response": "B"
+    },
+    {
+      "index": 2419,
+      "image": "data/raw/supervised_fault_classification/defect_supervised/polymer-insulator-upper-shackle/train/corrosão/02-06-2021_DJI_0527_275_6.jpg",
+      "class": "corrosão",
+      "label": "B",
+      "original_response": "C",
+      "rerun_response": "B"
+    },
+    {
+      "index": 2644,
+      "image": "data/raw/supervised_fault_classification/defect_supervised/polymer-insulator-upper-shackle/train/corrosão/09-06-2021_DJI_0483_594.jpg",
+      "class": "corrosão",
+      "label": "B",
+      "original_response": "C",
+      "rerun_response": "B"
+    },
+    {
+      "index": 2898,
+      "image": "data/raw/supervised_fault_classification/defect_supervised/polymer-insulator-upper-shackle/train/corrosão/01-06-2021_DJI_0512_149.jpg",
+      "class": "corrosão",
+      "label": "B",
+      "original_response": "B",
+      "rerun_response": "C"
+    },
+    {
+      "index": 3121,
+      "image": "data/raw/unsupervised_anomaly_detection/polymer-insulator-lower-shackle/test/rust/Fotos 02-12-2020_DJI_0254_manilha_isolador_inferior_151.jpg",
+      "class": "rust",
+      "label": "B",
+      "original_response": "B",
+      "rerun_response": "A"
+    },
+    {
+      "index": 3635,
+      "image": "data/raw/unsupervised_anomaly_detection/polymer-insulator-upper-shackle/test/rust/09-06-2021_DJI_0457_561.jpg",
+      "class": "rust",
+      "label": "C",
+      "original_response": "C",
+      "rerun_response": "B"
+    },
+    {
+      "index": 3845,
+      "image": "data/raw/unsupervised_anomaly_detection/polymer-insulator-lower-shackle/train/good/Fotos 14-12-2020_DJI_0431_manilha_isolador_inferior_672.jpg",
+      "class": "good",
+      "label": "A",
+      "original_response": "A",
+      "rerun_response": "B"
+    },
+    {
+      "index": 4460,
+      "image": "data/raw/unsupervised_anomaly_detection/polymer-insulator-upper-shackle/test/rust/01-06-2021_DJI_0454_140.jpg",
+      "class": "rust",
+      "label": "C",
+      "original_response": "C",
+      "rerun_response": "B"
+    },
+    {
+      "index": 4475,
+      "image": "data/raw/unsupervised_anomaly_detection/glass-insulator/test/missingcap/Fotos 25-11-2020_DJI_0448_cadeia_isolador_vidro_1774.jpg",
+      "class": "missing-cap",
+      "label": "B",
+      "original_response": "A",
+      "rerun_response": "B"
+    },
+    {
+      "index": 5300,
+      "image": "data/raw/unsupervised_anomaly_detection/vari-grip/train/good/Fotos 04-12-2020_DJI_0718_vari_grip_168.jpg",
+      "class": "good",
+      "label": "A",
+      "original_response": "B",
+      "rerun_response": "A"
+    }
+  ]
+}

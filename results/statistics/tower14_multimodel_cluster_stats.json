@@ -1,0 +1,242 @@
+{
+  "n": 5536,
+  "cluster_unit": "tower",
+  "n_clusters": 14,
+  "classes": [
+    "corrosão",
+    "good",
+    "missing-cap",
+    "nest",
+    "peeling-paint",
+    "rust",
+    "torned-up"
+  ],
+  "common_six_classes": [
+    "corrosão",
+    "good",
+    "missing-cap",
+    "nest",
+    "rust",
+    "torned-up"
+  ],
+  "per_class_recall": {
+    "qwen3_vl_8b": {
+      "corrosão": 0.91,
+      "good": 0.9974010395841664,
+      "missing-cap": 0.8275862068965517,
+      "nest": 1.0,
+      "peeling-paint": 1.0,
+      "rust": 0.8864468864468864,
+      "torned-up": 1.0
+    },
+    "resnet50_448": {
+      "corrosão": 0.96,
+      "good": 0.9086365453818472,
+      "missing-cap": 0.9482758620689655,
+      "nest": 1.0,
+      "peeling-paint": 0.0,
+      "rust": 0.9194139194139194,
+      "torned-up": 1.0
+    },
+    "swin_t_448": {
+      "corrosão": 0.99,
+      "good": 0.98140743702519,
+      "missing-cap": 0.9482758620689655,
+      "nest": 1.0,
+      "peeling-paint": 0.5,
+      "rust": 0.8974358974358975,
+      "torned-up": 1.0
+    }
+  },
+  "macro_recall_full_seven": {
+    "qwen3_vl_8b": 0.9459191618468006,
+    "resnet50_448": 0.8194751895521046,
+    "swin_t_448": 0.9024455995042934
+  },
+  "macro_recall_common_six": {
+    "qwen3_vl_8b": 0.9369056888212673,
+    "resnet50_448": 0.9560543878107888,
+    "swin_t_448": 0.9695198660883423
+  },
+  "comparisons": {
+    "qwen_vs_resnet_common_six": {
+      "classes": [
+        "corrosão",
+        "good",
+        "missing-cap",
+        "nest",
+        "rust",
+        "torned-up"
+      ],
+      "model_a": {
+        "per_class_recall": {
+          "corrosão": 0.91,
+          "good": 0.9974010395841664,
+          "missing-cap": 0.8275862068965517,
+          "nest": 1.0,
+          "rust": 0.8864468864468864,
+          "torned-up": 1.0
+        },
+        "macro_recall": 0.9369056888212673
+      },
+      "model_b": {
+        "per_class_recall": {
+          "corrosão": 0.96,
+          "good": 0.9086365453818472,
+          "missing-cap": 0.9482758620689655,
+          "nest": 1.0,
+          "rust": 0.9194139194139194,
+          "torned-up": 1.0
+        },
+        "macro_recall": 0.9560543878107888
+      },
+      "difference": -0.01914869898952143,
+      "cluster_bootstrap": {
+        "ci95": [
+          -0.028517406190121976,
+          -0.012919181140268547
+        ],
+        "valid_replicates": 6256,
+        "invalid_replicates": 3744,
+        "seed": 42
+      },
+      "cluster_permutation_raw_p": 0.019,
+      "n_permutation_valid": 10000
+    },
+    "qwen_vs_swin_common_six": {
+      "classes": [
+        "corrosão",
+        "good",
+        "missing-cap",
+        "nest",
+        "rust",
+        "torned-up"
+      ],
+      "model_a": {
+        "per_class_recall": {
+          "corrosão": 0.91,
+          "good": 0.9974010395841664,
+          "missing-cap": 0.8275862068965517,
+          "nest": 1.0,
+          "rust": 0.8864468864468864,
+          "torned-up": 1.0
+        },
+        "macro_recall": 0.9369056888212673
+      },
+      "model_b": {
+        "per_class_recall": {
+          "corrosão": 0.99,
+          "good": 0.98140743702519,
+          "missing-cap": 0.9482758620689655,
+          "nest": 1.0,
+          "rust": 0.8974358974358975,
+          "torned-up": 1.0
+        },
+        "macro_recall": 0.9695198660883423
+      },
+      "difference": -0.03261417726707494,
+      "cluster_bootstrap": {
+        "ci95": [
+          -0.042291732984197056,
+          -0.024645552310154382
+        ],
+        "valid_replicates": 6245,
+        "invalid_replicates": 3755,
+        "seed": 43
+      },
+      "cluster_permutation_raw_p": 0.0,
+      "n_permutation_valid": 10000
+    },
+    "resnet_vs_swin_common_six": {
+      "classes": [
+        "corrosão",
+        "good",
+        "missing-cap",
+        "nest",
+        "rust",
+        "torned-up"
+      ],
+      "model_a": {
+        "per_class_recall": {
+          "corrosão": 0.96,
+          "good": 0.9086365453818472,
+          "missing-cap": 0.9482758620689655,
+          "nest": 1.0,
+          "rust": 0.9194139194139194,
+          "torned-up": 1.0
+        },
+        "macro_recall": 0.9560543878107888
+      },
+      "model_b": {
+        "per_class_recall": {
+          "corrosão": 0.99,
+          "good": 0.98140743702519,
+          "missing-cap": 0.9482758620689655,
+          "nest": 1.0,
+          "rust": 0.8974358974358975,
+          "torned-up": 1.0
+        },
+        "macro_recall": 0.9695198660883423
+      },
+      "difference": -0.013465478277553511,
+      "cluster_bootstrap": {
+        "ci95": [
+          -0.017625243616058505,
+          -0.006906383828196323
+        ],
+        "valid_replicates": 6219,
+        "invalid_replicates": 3781,
+        "seed": 44
+      },
+      "cluster_permutation_raw_p": 0.0028,
+      "n_permutation_valid": 10000
+    },
+    "qwen_vs_swin_full_seven": {
+      "classes": [
+        "corrosão",
+        "good",
+        "missing-cap",
+        "nest",
+        "peeling-paint",
+        "rust",
+        "torned-up"
+      ],
+      "model_a": {
+        "per_class_recall": {
+          "corrosão": 0.91,
+          "good": 0.9974010395841664,
+          "missing-cap": 0.8275862068965517,
+          "nest": 1.0,
+          "peeling-paint": 1.0,
+          "rust": 0.8864468864468864,
+          "torned-up": 1.0
+        },
+        "macro_recall": 0.9459191618468006
+      },
+      "model_b": {
+        "per_class_recall": {
+          "corrosão": 0.99,
+          "good": 0.98140743702519,
+          "missing-cap": 0.9482758620689655,
+          "nest": 1.0,
+          "peeling-paint": 0.5,
+          "rust": 0.8974358974358975,
+          "torned-up": 1.0
+        },
+        "macro_recall": 0.9024455995042934
+      },
+      "difference": 0.04347356234250721,
+      "cluster_bootstrap": {
+        "ci95": [
+          -0.03284262564753188,
+          0.11992092469998585
+        ],
+        "valid_replicates": 5569,
+        "invalid_replicates": 4431,
+        "seed": 45
+      },
+      "cluster_permutation_raw_p": 0.977,
+      "n_permutation_valid": 10000
+    }
+  }
+}

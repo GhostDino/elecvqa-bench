@@ -1,0 +1,13 @@
+﻿benchmark_label,meaning_en,meaning_zh,used_in
+cannot_judge,explicit abstention option,无法判断,source metadata
+corrosão,generalized corrosion,腐蚀（广义）,T3
+defect,source label; see study documentation,defect,T2
+defective,binary defect label,存在缺陷,source metadata
+det_annotation,source detection annotation only; not a T3 defect label,检测标注,source/T1
+good,normal / no defect,状态正常,"T2,T3"
+missing-cap,missing cap,盖帽缺失,T3
+nest,bird nest,鸟巢,T3
+normal,binary normal label,状态正常,source metadata
+peeling-paint,peeling paint,油漆剥落,T3
+rust,localized oxidation on metal fittings,锈蚀,T3
+torned-up,torn or physically damaged component,撕裂,T3

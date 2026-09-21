@@ -1,0 +1,72 @@
+{
+  "method": "cluster-level sign-flip randomization; shifted null distribution for CI",
+  "n": 13574,
+  "n_clusters": 9,
+  "cluster_key": "_tower",
+  "classes": [
+    "corrosão",
+    "good",
+    "missing-cap",
+    "nest",
+    "rust",
+    "torned-up"
+  ],
+  "n_randomizations": 10000,
+  "seed": 42,
+  "qwen_recall": {
+    "corrosão": 0.8957345971563981,
+    "good": 0.9974921122886498,
+    "missing-cap": 0.9224806201550387,
+    "nest": 0.8704663212435233,
+    "rust": 0.85,
+    "torned-up": 0.0
+  },
+  "cnn_recall": {
+    "corrosão": 0.7677725118483413,
+    "good": 0.9810694927594855,
+    "missing-cap": 0.8565891472868217,
+    "nest": 0.7461139896373057,
+    "rust": 0.8962962962962963,
+    "torned-up": 0.09090909090909091
+  },
+  "macro_difference": 0.0329038536843781,
+  "macro_difference_ci95": [
+    -0.029666614046682895,
+    0.0954743214154391
+  ],
+  "p_value": 0.44985501449855014,
+  "per_class_contribution": {
+    "corrosão": 0.021327014218009477,
+    "good": 0.0027371032548607066,
+    "missing-cap": 0.010981912144702843,
+    "nest": 0.02072538860103627,
+    "rust": -0.007716049382716046,
+    "torned-up": -0.015151515151515152
+  },
+  "per_class_contribution_ci95": {
+    "corrosão": [
+      -0.001579778830963663,
+      0.04423380726698262
+    ],
+    "good": [
+      0.0002157322762451619,
+      0.005258474233476251
+    ],
+    "missing-cap": [
+      0.0,
+      0.021963824289405687
+    ],
+    "nest": [
+      -0.0017271157167530263,
+      0.04317789291882557
+    ],
+    "rust": [
+      -0.014197530864197522,
+      -0.001851851851851845
+    ],
+    "torned-up": [
+      -0.030303030303030304,
+      0.0
+    ]
+  }
+}

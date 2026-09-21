@@ -1,0 +1,32 @@
+{
+  "task": "T21_build_vqa",
+  "status": "done",
+  "prompt_version": "v1",
+  "hard_negative": "same_asset",
+  "tasks": {
+    "T1": {
+      "total": 10605,
+      "by_split": {
+        "train": 7448,
+        "val": 1068,
+        "test": 2089
+      }
+    },
+    "T2": {
+      "total": 9997,
+      "by_split": {
+        "train": 6949,
+        "val": 1027,
+        "test": 2021
+      }
+    },
+    "T3": {
+      "total": 36370,
+      "by_split": {
+        "train": 25460,
+        "val": 3626,
+        "test": 7284
+      }
+    }
+  }
+}

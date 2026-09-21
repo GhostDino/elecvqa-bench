@@ -1,0 +1,43 @@
+{
+  "n_total": 7284,
+  "n_valid": 7284,
+  "format_failure_rate": 0.0,
+  "balanced_accuracy": 0.9379,
+  "macro_f1": 0.9394,
+  "labels": [
+    "A",
+    "B",
+    "C"
+  ],
+  "confusion_matrix": [
+    [
+      6494,
+      24,
+      0
+    ],
+    [
+      38,
+      626,
+      11
+    ],
+    [
+      0,
+      10,
+      81
+    ]
+  ],
+  "pred_distribution": {
+    "A": 6532,
+    "B": 660,
+    "C": 92
+  },
+  "gt_distribution": {
+    "A": 6518,
+    "B": 675,
+    "C": 91
+  },
+  "model": "Q_8B_s41",
+  "task": "T3",
+  "adapter": "runs/multiseed/Q_8B_s41/v0-20260918-180619/checkpoint-6078",
+  "eval_time_s": 1213.8
+}

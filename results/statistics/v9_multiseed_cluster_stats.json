@@ -1,0 +1,65 @@
+{
+  "n": 13574,
+  "classes": [
+    "corrosão",
+    "good",
+    "missing-cap",
+    "nest",
+    "rust",
+    "torned-up"
+  ],
+  "cluster_unit": "tower",
+  "n_clusters": 9,
+  "comparisons": {
+    "seed42_qwen42_vs_resnet42": {
+      "qwen_macro_recall": 0.7646892274862082,
+      "resnet_macro_recall": 0.6844762572775166,
+      "difference": 0.08021297020869156,
+      "cluster_bootstrap": {
+        "ci95": [
+          0.04037871253781845,
+          0.10721643734662435
+        ],
+        "valid_replicates": 9698,
+        "invalid_replicates": 302
+      },
+      "cluster_permutation_raw_p": 0.023897610238976102,
+      "seed": 42
+    },
+    "seed43_qwen43_vs_resnet43": {
+      "qwen_macro_recall": 0.7560289418072683,
+      "resnet_macro_recall": 0.7231250881228902,
+      "difference": 0.03290385368437809,
+      "cluster_bootstrap": {
+        "ci95": [
+          -0.041295489023761775,
+          0.06243870493310177
+        ],
+        "valid_replicates": 9672,
+        "invalid_replicates": 328
+      },
+      "cluster_permutation_raw_p": 0.44735526447355267,
+      "seed": 43
+    },
+    "sensitivity_qwen43_vs_resnet44": {
+      "qwen_macro_recall": 0.7560289418072683,
+      "resnet_macro_recall": 0.7057155939979642,
+      "difference": 0.050313347809304076,
+      "cluster_bootstrap": {
+        "ci95": [
+          0.01141232326374302,
+          0.07661572273486095
+        ],
+        "valid_replicates": 9682,
+        "invalid_replicates": 318
+      },
+      "cluster_permutation_raw_p": 0.008999100089991,
+      "seed": 44
+    }
+  },
+  "holm": {
+    "sensitivity_qwen43_vs_resnet44": 0.026997300269973,
+    "seed42_qwen42_vs_resnet42": 0.047795220477952205,
+    "seed43_qwen43_vs_resnet43": 0.44735526447355267
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "n": 6620,
+  "n_clusters": 4319,
+  "cluster_key": "_parent_id",
+  "classes": [
+    "corrosão",
+    "good",
+    "missing-cap",
+    "nest",
+    "peeling-paint",
+    "rust",
+    "torned-up"
+  ],
+  "qwen_recall": {
+    "corrosão": 0.935251798561151,
+    "good": 0.9974662162162162,
+    "missing-cap": 0.9759036144578314,
+    "nest": 0.9710144927536232,
+    "peeling-paint": 1.0,
+    "rust": 0.9065420560747663,
+    "torned-up": 0.75
+  },
+  "cnn_recall": {
+    "corrosão": 0.9496402877697842,
+    "good": 0.9783783783783784,
+    "missing-cap": 0.9698795180722891,
+    "nest": 0.9710144927536232,
+    "peeling-paint": 1.0,
+    "rust": 0.9314641744548287,
+    "torned-up": 1.0
+  },
+  "macro_difference": -0.03774266762361648,
+  "per_class_contribution": {
+    "corrosão": -0.0020554984583761593,
+    "good": 0.002726833976833979,
+    "missing-cap": 0.0008605851979346062,
+    "nest": 0.0,
+    "peeling-paint": 0.0,
+    "rust": -0.003560302625723187,
+    "torned-up": -0.03571428571428571
+  },
+  "bootstrap": {
+    "n_requested": 10000,
+    "valid_replicates": 6144,
+    "invalid_replicates": 3856,
+    "seed": 42,
+    "macro_difference_ci95": [
+      -0.1395504372303469,
+      0.009230288429670453
+    ],
+    "per_class_contribution_ci95": {
+      "corrosão": [
+        -0.00863655023137781,
+        0.004005340453938585
+      ],
+      "good": [
+        0.0021880401674750746,
+        0.0032946160673064696
+      ],
+      "missing-cap": [
+        -0.00677957573561969,
+        0.00998692168047007
+      ],
+      "nest": [
+        -0.011278195488721799,
+        0.010050125313283217
+      ],
+      "peeling-paint": [
+        0.0,
+        0.0
+      ],
+      "rust": [
+        -0.008550586561764592,
+        0.0005173238314032601
+      ],
+      "torned-up": [
+        -0.14285714285714285,
+        0.0
+      ]
+    }
+  }
+}

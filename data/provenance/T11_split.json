@@ -1,0 +1,21 @@
+{
+  "task": "T11_split",
+  "status": "done",
+  "total_records": 49752,
+  "train": {
+    "sha256": "51ff45f92be96ead9df430e1dd67c76946436fe197f31554b3ff307a17fa8d21",
+    "n_records": 34815,
+    "n_groups": 25353
+  },
+  "val": {
+    "sha256": "02794bbe57017c491f01a3b76ac3a0c9c22cfd6ddb230b467e0285faa926b945",
+    "n_records": 4996,
+    "n_groups": 3620
+  },
+  "test": {
+    "sha256": "34fc4162fb81a0d60d00aa8321b3cd00949db5d314c4e2734579d7933077d0a6",
+    "n_records": 9941,
+    "n_groups": 7256
+  },
+  "det_skipped": 0
+}

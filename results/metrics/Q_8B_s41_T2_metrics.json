@@ -1,0 +1,35 @@
+{
+  "n_total": 2021,
+  "n_valid": 2021,
+  "format_failure_rate": 0.0,
+  "balanced_accuracy": 0.98,
+  "macro_f1": 0.9815,
+  "labels": [
+    "A",
+    "B"
+  ],
+  "confusion_matrix": [
+    [
+      1244,
+      11
+    ],
+    [
+      24,
+      742
+    ]
+  ],
+  "pred_distribution": {
+    "A": 1268,
+    "B": 753
+  },
+  "gt_distribution": {
+    "A": 1255,
+    "B": 766
+  },
+  "miss_rate": 0.0313,
+  "hallucination_rate": 0.0088,
+  "model": "Q_8B_s41",
+  "task": "T2",
+  "adapter": "runs/multiseed/Q_8B_s41/v0-20260918-180619/checkpoint-6078",
+  "eval_time_s": 414.1
+}

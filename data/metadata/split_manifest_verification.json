@@ -1,0 +1,26 @@
+{
+  "all_match": true,
+  "splits": {
+    "train": {
+      "path": "data/benchmark/splits/train.jsonl",
+      "expected_sha256": "51ff45f92be96ead9df430e1dd67c76946436fe197f31554b3ff307a17fa8d21",
+      "actual_sha256": "51ff45f92be96ead9df430e1dd67c76946436fe197f31554b3ff307a17fa8d21",
+      "match": true,
+      "n_records": 34815
+    },
+    "val": {
+      "path": "data/benchmark/splits/val.jsonl",
+      "expected_sha256": "02794bbe57017c491f01a3b76ac3a0c9c22cfd6ddb230b467e0285faa926b945",
+      "actual_sha256": "02794bbe57017c491f01a3b76ac3a0c9c22cfd6ddb230b467e0285faa926b945",
+      "match": true,
+      "n_records": 4996
+    },
+    "test": {
+      "path": "data/benchmark/splits/test.jsonl",
+      "expected_sha256": "34fc4162fb81a0d60d00aa8321b3cd00949db5d314c4e2734579d7933077d0a6",
+      "actual_sha256": "34fc4162fb81a0d60d00aa8321b3cd00949db5d314c4e2734579d7933077d0a6",
+      "match": true,
+      "n_records": 9941
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "task": "T20_build_crops",
+  "status": "done",
+  "expand_ratios": [
+    2.0
+  ],
+  "stats": {
+    "2.0": {
+      "det_crops": 29298,
+      "sup_refs": 11525,
+      "unsup_refs": 27620
+    }
+  }
+}

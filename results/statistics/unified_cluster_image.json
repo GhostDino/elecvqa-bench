@@ -1,0 +1,91 @@
+{
+  "n": 6620,
+  "n_clusters": 4319,
+  "cluster_key": "_parent_id",
+  "classes": [
+    "corrosão",
+    "good",
+    "missing-cap",
+    "nest",
+    "rust",
+    "torned-up"
+  ],
+  "qwen_recall": {
+    "corrosão": 0.935251798561151,
+    "good": 0.9974662162162162,
+    "missing-cap": 0.9759036144578314,
+    "nest": 0.9710144927536232,
+    "rust": 0.9065420560747663,
+    "torned-up": 0.75
+  },
+  "cnn_recall": {
+    "corrosão": 0.9496402877697842,
+    "good": 0.9783783783783784,
+    "missing-cap": 0.9698795180722891,
+    "nest": 0.9710144927536232,
+    "rust": 0.9314641744548287,
+    "torned-up": 1.0
+  },
+  "macro_difference": -0.04403311222755255,
+  "per_class_contribution": {
+    "corrosão": -0.002398081534772186,
+    "good": 0.0031813063063063085,
+    "missing-cap": 0.0010040160642570406,
+    "nest": 0.0,
+    "rust": -0.004153686396677052,
+    "torned-up": -0.041666666666666664
+  },
+  "bootstrap": {
+    "n_requested": 10000,
+    "valid_replicates": 9813,
+    "invalid_replicates": 187,
+    "seed": 42,
+    "macro_difference_ci95": [
+      -0.16229039289385827,
+      0.010854530575548567
+    ],
+    "per_class_contribution_ci95": {
+      "corrosão": [
+        -0.010000000000000009,
+        0.0046620046620046525
+      ],
+      "good": [
+        0.00255145432896751,
+        0.003852713069905838
+      ],
+      "missing-cap": [
+        -0.007839189367021972,
+        0.011450381679389313
+      ],
+      "nest": [
+        -0.01315789473684211,
+        0.011904761904761899
+      ],
+      "rust": [
+        -0.009963768115942037,
+        0.0006646423751686579
+      ],
+      "torned-up": [
+        -0.16666666666666666,
+        0.0
+      ]
+    }
+  },
+  "bootstrap_p_value": 0.9285641495974727,
+  "permutation_within_cluster": {
+    "observed": -0.04403311222755255,
+    "p_value": 0.36776322367763226,
+    "n_permutations": 10000,
+    "seed": 42,
+    "mode": "within",
+    "permutation_mean": 0.001035991492259128
+  },
+  "permutation_cluster_level": {
+    "observed": -0.04403311222755255,
+    "p_value": 0.40175982401759824,
+    "n_permutations": 10000,
+    "seed": 42,
+    "mode": "cluster",
+    "permutation_mean": -0.000783128838976518
+  }
+}

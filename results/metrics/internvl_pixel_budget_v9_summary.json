@@ -1,0 +1,629 @@
+{
+  "model": "/root/models/models/OpenGVLab--InternVL3_5-8B/snapshots/master",
+  "adapter": "runs/sft_internvl3_8b_main/v0-20260824-155006/checkpoint-6078",
+  "test": "work/sft_test/T3_test.jsonl",
+  "n": 7284,
+  "input_size": 448,
+  "max_num": 12,
+  "num_image_token_per_patch": 256,
+  "settings": {
+    "65536": {
+      "max_pixels": 65536,
+      "n": 7284,
+      "macro_recall": 0.7118117789882119,
+      "per_class_recall": {
+        "corrosão": {
+          "n": 184,
+          "correct": 145,
+          "recall": 0.7880434782608695
+        },
+        "good": {
+          "n": 6518,
+          "correct": 6508,
+          "recall": 0.9984657870512427
+        },
+        "missing-cap": {
+          "n": 136,
+          "correct": 85,
+          "recall": 0.625
+        },
+        "nest": {
+          "n": 103,
+          "correct": 100,
+          "recall": 0.970873786407767
+        },
+        "peeling-paint": {
+          "n": 4,
+          "correct": 3,
+          "recall": 0.75
+        },
+        "rust": {
+          "n": 334,
+          "correct": 284,
+          "recall": 0.8502994011976048
+        },
+        "torned-up": {
+          "n": 5,
+          "correct": 0,
+          "recall": 0.0
+        }
+      },
+      "patches": {
+        "mean": 1.3521416803953872,
+        "min": 1,
+        "max": 13,
+        "p50": 1,
+        "unique_values": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          13
+        ]
+      },
+      "visual_tokens": {
+        "mean": 346.1482701812191,
+        "min": 256,
+        "max": 3328,
+        "p50": 256,
+        "unique_values": [
+          256,
+          768,
+          1024,
+          1280,
+          1536,
+          1792,
+          2560,
+          2816,
+          3328
+        ]
+      },
+      "source_width_after_budget": {
+        "mean": 232.56493684788578,
+        "min": 44,
+        "max": 783
+      },
+      "source_height_after_budget": {
+        "mean": 227.10735859417903,
+        "min": 36,
+        "max": 256
+      },
+      "original_width": {
+        "mean": 479.71814936847886,
+        "min": 44,
+        "max": 1920
+      },
+      "original_height": {
+        "mean": 466.2445085118067,
+        "min": 36,
+        "max": 1080
+      },
+      "unique_prompt_hashes": 47,
+      "unique_pixel_hashes": 5529,
+      "prediction_file": "runs/internvl_pixel_budget_v9/preds_maxpixels_65536.jsonl",
+      "audit_file": "runs/internvl_pixel_budget_v9/input_audit_maxpixels_65536.jsonl",
+      "prediction_sha256": "d8904922e4e7852b508c3007ee67c96d5ae5350dd4a255182a271cf5359760f5",
+      "elapsed_seconds": 1060.8654696941376
+    },
+    "131072": {
+      "max_pixels": 131072,
+      "n": 7284,
+      "macro_recall": 0.7519483340614285,
+      "per_class_recall": {
+        "corrosão": {
+          "n": 184,
+          "correct": 144,
+          "recall": 0.782608695652174
+        },
+        "good": {
+          "n": 6518,
+          "correct": 6508,
+          "recall": 0.9984657870512427
+        },
+        "missing-cap": {
+          "n": 136,
+          "correct": 87,
+          "recall": 0.6397058823529411
+        },
+        "nest": {
+          "n": 103,
+          "correct": 101,
+          "recall": 0.9805825242718447
+        },
+        "peeling-paint": {
+          "n": 4,
+          "correct": 4,
+          "recall": 1.0
+        },
+        "rust": {
+          "n": 334,
+          "correct": 288,
+          "recall": 0.8622754491017964
+        },
+        "torned-up": {
+          "n": 5,
+          "correct": 0,
+          "recall": 0.0
+        }
+      },
+      "patches": {
+        "mean": 1.3521416803953872,
+        "min": 1,
+        "max": 13,
+        "p50": 1,
+        "unique_values": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          13
+        ]
+      },
+      "visual_tokens": {
+        "mean": 346.1482701812191,
+        "min": 256,
+        "max": 3328,
+        "p50": 256,
+        "unique_values": [
+          256,
+          768,
+          1024,
+          1280,
+          1536,
+          1792,
+          2560,
+          2816,
+          3328
+        ]
+      },
+      "source_width_after_budget": {
+        "mean": 293.83250961010435,
+        "min": 44,
+        "max": 1108
+      },
+      "source_height_after_budget": {
+        "mean": 286.7656507413509,
+        "min": 36,
+        "max": 362
+      },
+      "original_width": {
+        "mean": 479.71814936847886,
+        "min": 44,
+        "max": 1920
+      },
+      "original_height": {
+        "mean": 466.2445085118067,
+        "min": 36,
+        "max": 1080
+      },
+      "unique_prompt_hashes": 47,
+      "unique_pixel_hashes": 5529,
+      "prediction_file": "runs/internvl_pixel_budget_v9/preds_maxpixels_131072.jsonl",
+      "audit_file": "runs/internvl_pixel_budget_v9/input_audit_maxpixels_131072.jsonl",
+      "prediction_sha256": "75600fbf15be7d746121bd92e62a8624d526555383913b55544b33367ab96f26",
+      "elapsed_seconds": 1061.0426909923553
+    },
+    "200704": {
+      "max_pixels": 200704,
+      "n": 7284,
+      "macro_recall": 0.7565793992451413,
+      "per_class_recall": {
+        "corrosão": {
+          "n": 184,
+          "correct": 148,
+          "recall": 0.8043478260869565
+        },
+        "good": {
+          "n": 6518,
+          "correct": 6506,
+          "recall": 0.9981589444614912
+        },
+        "missing-cap": {
+          "n": 136,
+          "correct": 89,
+          "recall": 0.6544117647058824
+        },
+        "nest": {
+          "n": 103,
+          "correct": 100,
+          "recall": 0.970873786407767
+        },
+        "peeling-paint": {
+          "n": 4,
+          "correct": 4,
+          "recall": 1.0
+        },
+        "rust": {
+          "n": 334,
+          "correct": 290,
+          "recall": 0.8682634730538922
+        },
+        "torned-up": {
+          "n": 5,
+          "correct": 0,
+          "recall": 0.0
+        }
+      },
+      "patches": {
+        "mean": 1.3521416803953872,
+        "min": 1,
+        "max": 13,
+        "p50": 1,
+        "unique_values": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          13
+        ]
+      },
+      "visual_tokens": {
+        "mean": 346.1482701812191,
+        "min": 256,
+        "max": 3328,
+        "p50": 256,
+        "unique_values": [
+          256,
+          768,
+          1024,
+          1280,
+          1536,
+          1792,
+          2560,
+          2816,
+          3328
+        ]
+      },
+      "source_width_after_budget": {
+        "mean": 334.4739154310818,
+        "min": 44,
+        "max": 1371
+      },
+      "source_height_after_budget": {
+        "mean": 326.42764964305326,
+        "min": 36,
+        "max": 448
+      },
+      "original_width": {
+        "mean": 479.71814936847886,
+        "min": 44,
+        "max": 1920
+      },
+      "original_height": {
+        "mean": 466.2445085118067,
+        "min": 36,
+        "max": 1080
+      },
+      "unique_prompt_hashes": 47,
+      "unique_pixel_hashes": 5529,
+      "prediction_file": "runs/internvl_pixel_budget_v9/preds_maxpixels_200704.jsonl",
+      "audit_file": "runs/internvl_pixel_budget_v9/input_audit_maxpixels_200704.jsonl",
+      "prediction_sha256": "874e10843debc18d150761d14c559a0c69b23ab63078e970515815bb2601980a",
+      "elapsed_seconds": 1055.9255232810974
+    },
+    "401408": {
+      "max_pixels": 401408,
+      "n": 7284,
+      "macro_recall": 0.7547525815615461,
+      "per_class_recall": {
+        "corrosão": {
+          "n": 184,
+          "correct": 147,
+          "recall": 0.7989130434782609
+        },
+        "good": {
+          "n": 6518,
+          "correct": 6506,
+          "recall": 0.9981589444614912
+        },
+        "missing-cap": {
+          "n": 136,
+          "correct": 88,
+          "recall": 0.6470588235294118
+        },
+        "nest": {
+          "n": 103,
+          "correct": 100,
+          "recall": 0.970873786407767
+        },
+        "peeling-paint": {
+          "n": 4,
+          "correct": 4,
+          "recall": 1.0
+        },
+        "rust": {
+          "n": 334,
+          "correct": 290,
+          "recall": 0.8682634730538922
+        },
+        "torned-up": {
+          "n": 5,
+          "correct": 0,
+          "recall": 0.0
+        }
+      },
+      "patches": {
+        "mean": 1.3521416803953872,
+        "min": 1,
+        "max": 13,
+        "p50": 1,
+        "unique_values": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          13
+        ]
+      },
+      "visual_tokens": {
+        "mean": 346.1482701812191,
+        "min": 256,
+        "max": 3328,
+        "p50": 256,
+        "unique_values": [
+          256,
+          768,
+          1024,
+          1280,
+          1536,
+          1792,
+          2560,
+          2816,
+          3328
+        ]
+      },
+      "source_width_after_budget": {
+        "mean": 397.29338275672706,
+        "min": 44,
+        "max": 1763
+      },
+      "source_height_after_budget": {
+        "mean": 387.61037891268535,
+        "min": 36,
+        "max": 634
+      },
+      "original_width": {
+        "mean": 479.71814936847886,
+        "min": 44,
+        "max": 1920
+      },
+      "original_height": {
+        "mean": 466.2445085118067,
+        "min": 36,
+        "max": 1080
+      },
+      "unique_prompt_hashes": 47,
+      "unique_pixel_hashes": 5529,
+      "prediction_file": "runs/internvl_pixel_budget_v9/preds_maxpixels_401408.jsonl",
+      "audit_file": "runs/internvl_pixel_budget_v9/input_audit_maxpixels_401408.jsonl",
+      "prediction_sha256": "80d2d9d942dbb50f9c12055b48f7dd682af088620091c789d7516ac0a5b4622f",
+      "elapsed_seconds": 1070.0003008842468
+    },
+    "802816": {
+      "max_pixels": 802816,
+      "n": 7284,
+      "macro_recall": 0.7710114262170885,
+      "per_class_recall": {
+        "corrosão": {
+          "n": 184,
+          "correct": 164,
+          "recall": 0.8913043478260869
+        },
+        "good": {
+          "n": 6518,
+          "correct": 6506,
+          "recall": 0.9981589444614912
+        },
+        "missing-cap": {
+          "n": 136,
+          "correct": 90,
+          "recall": 0.6617647058823529
+        },
+        "nest": {
+          "n": 103,
+          "correct": 101,
+          "recall": 0.9805825242718447
+        },
+        "peeling-paint": {
+          "n": 4,
+          "correct": 4,
+          "recall": 1.0
+        },
+        "rust": {
+          "n": 334,
+          "correct": 289,
+          "recall": 0.8652694610778443
+        },
+        "torned-up": {
+          "n": 5,
+          "correct": 0,
+          "recall": 0.0
+        }
+      },
+      "patches": {
+        "mean": 2.363673805601318,
+        "min": 1,
+        "max": 13,
+        "p50": 1,
+        "unique_values": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          13
+        ]
+      },
+      "visual_tokens": {
+        "mean": 605.1004942339374,
+        "min": 256,
+        "max": 3328,
+        "p50": 256,
+        "unique_values": [
+          256,
+          768,
+          1024,
+          1280,
+          1536,
+          1792,
+          2560,
+          2816,
+          3328
+        ]
+      },
+      "source_width_after_budget": {
+        "mean": 453.95593080724876,
+        "min": 44,
+        "max": 1763
+      },
+      "source_height_after_budget": {
+        "mean": 442.5144151565074,
+        "min": 36,
+        "max": 896
+      },
+      "original_width": {
+        "mean": 479.71814936847886,
+        "min": 44,
+        "max": 1920
+      },
+      "original_height": {
+        "mean": 466.2445085118067,
+        "min": 36,
+        "max": 1080
+      },
+      "unique_prompt_hashes": 56,
+      "unique_pixel_hashes": 5529,
+      "prediction_file": "runs/internvl_pixel_budget_v9/preds_maxpixels_802816.jsonl",
+      "audit_file": "runs/internvl_pixel_budget_v9/input_audit_maxpixels_802816.jsonl",
+      "prediction_sha256": "f4367f899b84d2ee757ca8e23748a2d319353f33ae504bdfbc528dd4c54617b3",
+      "elapsed_seconds": 1424.628352880478
+    },
+    "100000000": {
+      "max_pixels": 100000000,
+      "n": 7284,
+      "macro_recall": 0.7733862892057622,
+      "per_class_recall": {
+        "corrosão": {
+          "n": 184,
+          "correct": 163,
+          "recall": 0.8858695652173914
+        },
+        "good": {
+          "n": 6518,
+          "correct": 6506,
+          "recall": 0.9981589444614912
+        },
+        "missing-cap": {
+          "n": 136,
+          "correct": 93,
+          "recall": 0.6838235294117647
+        },
+        "nest": {
+          "n": 103,
+          "correct": 101,
+          "recall": 0.9805825242718447
+        },
+        "peeling-paint": {
+          "n": 4,
+          "correct": 4,
+          "recall": 1.0
+        },
+        "rust": {
+          "n": 334,
+          "correct": 289,
+          "recall": 0.8652694610778443
+        },
+        "torned-up": {
+          "n": 5,
+          "correct": 0,
+          "recall": 0.0
+        }
+      },
+      "patches": {
+        "mean": 2.9408292147171884,
+        "min": 1,
+        "max": 13,
+        "p50": 1,
+        "unique_values": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13
+        ]
+      },
+      "visual_tokens": {
+        "mean": 752.8522789676002,
+        "min": 256,
+        "max": 3328,
+        "p50": 256,
+        "unique_values": [
+          256,
+          768,
+          1024,
+          1280,
+          1536,
+          1792,
+          2304,
+          2560,
+          2816,
+          3328
+        ]
+      },
+      "source_width_after_budget": {
+        "mean": 479.71814936847886,
+        "min": 44,
+        "max": 1920
+      },
+      "source_height_after_budget": {
+        "mean": 466.2445085118067,
+        "min": 36,
+        "max": 1080
+      },
+      "original_width": {
+        "mean": 479.71814936847886,
+        "min": 44,
+        "max": 1920
+      },
+      "original_height": {
+        "mean": 466.2445085118067,
+        "min": 36,
+        "max": 1080
+      },
+      "unique_prompt_hashes": 66,
+      "unique_pixel_hashes": 5529,
+      "prediction_file": "runs/internvl_pixel_budget_v9/preds_maxpixels_100000000.jsonl",
+      "audit_file": "runs/internvl_pixel_budget_v9/input_audit_maxpixels_100000000.jsonl",
+      "prediction_sha256": "fbb24444ae2853763af9e08f73ccb3a798fa479d5ddbb22f629cb8aaf1c6091d",
+      "elapsed_seconds": 1674.8790991306305
+    }
+  },
+  "generation": {
+    "max_new_tokens": 8,
+    "do_sample": false
+  }
+}

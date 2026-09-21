@@ -1,0 +1,87 @@
+{
+  "n": 13574,
+  "qwen3_vl_8b": {
+    "per_class_recall": {
+      "corrosão": {
+        "n": 211,
+        "correct": 189,
+        "recall": 0.8957345971563981
+      },
+      "good": {
+        "n": 12361,
+        "correct": 12330,
+        "recall": 0.9974921122886498
+      },
+      "missing-cap": {
+        "n": 258,
+        "correct": 238,
+        "recall": 0.9224806201550387
+      },
+      "nest": {
+        "n": 193,
+        "correct": 168,
+        "recall": 0.8704663212435233
+      },
+      "rust": {
+        "n": 540,
+        "correct": 459,
+        "recall": 0.85
+      },
+      "torned-up": {
+        "n": 11,
+        "correct": 0,
+        "recall": 0.0
+      }
+    },
+    "macro_recall": 0.7560289418072683
+  },
+  "cnn_baseline": {
+    "per_class_recall": {
+      "corrosão": {
+        "n": 211,
+        "correct": 171,
+        "recall": 0.8104265402843602
+      },
+      "good": {
+        "n": 12361,
+        "correct": 12053,
+        "recall": 0.9750829220936817
+      },
+      "missing-cap": {
+        "n": 258,
+        "correct": 209,
+        "recall": 0.810077519379845
+      },
+      "nest": {
+        "n": 193,
+        "correct": 144,
+        "recall": 0.7461139896373057
+      },
+      "rust": {
+        "n": 540,
+        "correct": 482,
+        "recall": 0.8925925925925926
+      },
+      "torned-up": {
+        "n": 11,
+        "correct": 0,
+        "recall": 0.0
+      }
+    },
+    "macro_recall": 0.7057155939979642
+  },
+  "qwen_vs_cnn": {
+    "bootstrap": {
+      "mean": 0.05019842512995457,
+      "ci95": [
+        0.033856279273706644,
+        0.06646080625648478
+      ]
+    },
+    "permutation": {
+      "observed": 0.050313347809304076,
+      "p_value": 0.0,
+      "perm_mean": 0.00015117169520943504
+    }
+  }
+}

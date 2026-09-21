@@ -1,0 +1,246 @@
+{
+  "damper-stockbridge": {
+    "asset_cn": "斯托克布里奇防震锤",
+    "t3_options": [
+      "A. 状态正常",
+      "B. 锈蚀(rust)",
+      "C. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "rust": "B"
+    },
+    "labels": [
+      "good",
+      "rust"
+    ],
+    "n_records": 6971
+  },
+  "glass-insulator": {
+    "asset_cn": "玻璃绝缘子",
+    "t3_options": [
+      "A. 状态正常",
+      "B. 盖帽缺失(missing-cap)",
+      "C. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "missing-cap": "B"
+    },
+    "labels": [
+      "good",
+      "missing-cap"
+    ],
+    "n_records": 4409
+  },
+  "glass-insulator-big-shackle": {
+    "asset_cn": "玻璃绝缘子大球头",
+    "t3_options": [
+      "A. 状态正常",
+      "B. 锈蚀(rust)",
+      "C. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "rust": "B"
+    },
+    "labels": [
+      "good",
+      "rust"
+    ],
+    "n_records": 269
+  },
+  "glass-insulator-small-shackle": {
+    "asset_cn": "玻璃绝缘子小球头",
+    "t3_options": [
+      "A. 状态正常",
+      "B. 鸟巢(nest)",
+      "C. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "nest": "B"
+    },
+    "labels": [
+      "good",
+      "nest"
+    ],
+    "n_records": 264
+  },
+  "glass-insulator-tower-shackle": {
+    "asset_cn": "玻璃绝缘子塔球头",
+    "t3_options": [
+      "A. 状态正常",
+      "B. 锈蚀(rust)",
+      "C. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "rust": "B"
+    },
+    "labels": [
+      "good",
+      "rust"
+    ],
+    "n_records": 202
+  },
+  "lightning-rod-shackle": {
+    "asset_cn": "避雷线球头",
+    "t3_options": [
+      "A. 状态正常",
+      "B. 锈蚀(rust)",
+      "C. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "rust": "B"
+    },
+    "labels": [
+      "good",
+      "rust"
+    ],
+    "n_records": 199
+  },
+  "lightning-rod-suspension": {
+    "asset_cn": "避雷线悬垂",
+    "t3_options": [
+      "A. 状态正常",
+      "B. 锈蚀(rust)",
+      "C. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "rust": "B"
+    },
+    "labels": [
+      "good",
+      "rust"
+    ],
+    "n_records": 1538
+  },
+  "plate": {
+    "asset_cn": "塔号牌",
+    "t3_options": [
+      "A. 状态正常",
+      "B. 油漆剥落(peeling-paint)",
+      "C. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "peeling-paint": "B"
+    },
+    "labels": [
+      "good",
+      "peeling-paint"
+    ],
+    "n_records": 218
+  },
+  "polymer-insulator": {
+    "asset_cn": "复合绝缘子",
+    "t3_options": [
+      "A. 状态正常",
+      "B. 撕裂(torned-up)",
+      "C. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "torned-up": "B"
+    },
+    "labels": [
+      "good",
+      "torned-up"
+    ],
+    "n_records": 3048
+  },
+  "polymer-insulator-lower-shackle": {
+    "asset_cn": "复合绝缘子下球头",
+    "t3_options": [
+      "A. 状态正常",
+      "B. 锈蚀(rust)",
+      "C. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "rust": "B"
+    },
+    "labels": [
+      "good",
+      "rust"
+    ],
+    "n_records": 1948
+  },
+  "polymer-insulator-tower-shackle": {
+    "asset_cn": "复合绝缘子塔球头",
+    "t3_options": [
+      "A. 状态正常",
+      "B. 锈蚀(rust)",
+      "C. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "rust": "B"
+    },
+    "labels": [
+      "good",
+      "rust"
+    ],
+    "n_records": 64
+  },
+  "polymer-insulator-upper-shackle": {
+    "asset_cn": "复合绝缘子上球头",
+    "t3_options": [
+      "A. 状态正常",
+      "B. corrosão(corrosão)",
+      "C. 锈蚀(rust)",
+      "D. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "corrosão": "B",
+      "rust": "C"
+    },
+    "labels": [
+      "corrosão",
+      "good",
+      "rust"
+    ],
+    "n_records": 2818
+  },
+  "vari-grip": {
+    "asset_cn": "防震锤",
+    "t3_options": [
+      "A. 状态正常",
+      "B. 鸟巢(nest)",
+      "C. 锈蚀(rust)",
+      "D. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "nest": "B",
+      "rust": "C"
+    },
+    "labels": [
+      "good",
+      "nest",
+      "rust"
+    ],
+    "n_records": 1981
+  },
+  "yoke-suspension": {
+    "asset_cn": "悬垂联塔件",
+    "t3_options": [
+      "A. 状态正常",
+      "B. 锈蚀(rust)",
+      "C. 无法判断"
+    ],
+    "answer_by_label": {
+      "good": "A",
+      "rust": "B"
+    },
+    "labels": [
+      "good",
+      "rust"
+    ],
+    "n_records": 12441
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "candidate_scope": "supervised_fault_classification + unsupervised_anomaly_detection records in the released split pipeline",
+  "n_candidates": 39145,
+  "n_included_in_t3": 36370,
+  "n_excluded_from_t3": 2775,
+  "reason_counts": {
+    "included": 36370,
+    "asset_has_no_observed_defect_class": 2775
+  },
+  "included_by_source_subset": {
+    "supervised": 11525,
+    "unsupervised": 24845
+  },
+  "reproducibility_note": "This audit is generated from the released crop manifest and final T3 task file. The current study states 38,350 candidates and 1,980 exclusions; the released files contain 39,145 candidates and 2,775 exclusions under the actual build script. This discrepancy should be reconciled before submission."
+}

@@ -1,0 +1,80 @@
+{
+  "T1": {
+    "total": 10605,
+    "by_split": {
+      "train": 7448,
+      "val": 1068,
+      "test": 2089
+    },
+    "by_asset": {
+      "all": 10605
+    },
+    "by_label": {
+      "grounding": 10605
+    }
+  },
+  "T2": {
+    "total": 9997,
+    "by_split": {
+      "train": 6949,
+      "val": 1027,
+      "test": 2021
+    },
+    "by_asset": {
+      "damper-preformed": 1020,
+      "damper-stockbridge": 36,
+      "glass-insulator": 1620,
+      "glass-insulator-big-shackle": 20,
+      "glass-insulator-small-shackle": 2,
+      "glass-insulator-tower-shackle": 14,
+      "lightning-rod-shackle": 8,
+      "lightning-rod-suspension": 760,
+      "plate": 8,
+      "polymer-insulator": 44,
+      "polymer-insulator-lower-shackle": 630,
+      "polymer-insulator-tower-shackle": 24,
+      "polymer-insulator-upper-shackle": 1750,
+      "spacer": 94,
+      "vari-grip": 1588,
+      "yoke": 1661,
+      "yoke-suspension": 718
+    },
+    "by_label": {
+      "good": 6386,
+      "defect": 3611
+    }
+  },
+  "T3": {
+    "total": 36370,
+    "by_split": {
+      "train": 25460,
+      "val": 3626,
+      "test": 7284
+    },
+    "by_asset": {
+      "damper-stockbridge": 6971,
+      "glass-insulator": 4409,
+      "glass-insulator-big-shackle": 269,
+      "glass-insulator-small-shackle": 264,
+      "glass-insulator-tower-shackle": 202,
+      "lightning-rod-shackle": 199,
+      "lightning-rod-suspension": 1538,
+      "plate": 218,
+      "polymer-insulator": 3048,
+      "polymer-insulator-lower-shackle": 1948,
+      "polymer-insulator-tower-shackle": 64,
+      "polymer-insulator-upper-shackle": 2818,
+      "vari-grip": 1981,
+      "yoke-suspension": 12441
+    },
+    "by_label": {
+      "good": 32759,
+      "rust": 1598,
+      "missing-cap": 810,
+      "nest": 437,
+      "peeling-paint": 4,
+      "torned-up": 22,
+      "corrosão": 740
+    }
+  }
+}

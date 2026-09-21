@@ -1,0 +1,29 @@
+{
+  "prompt_version": "v1",
+  "default_level": "P3",
+  "prompt_level_map": {
+    "v1": "P3"
+  },
+  "templates": {
+    "P1": {
+      "T2": "请判断图中{asset_cn}的状态。\n选项：A. 状态正常  B. 存在缺陷  C. 图像质量不足以判断\n请只输出选项字母。",
+      "T3_template": "请判断图中{asset_cn}的缺陷类型。\n选项：{options}\n请只输出选项字母。"
+    },
+    "P2": {
+      "T2": "图中所示为电力线路巡检中的{asset_cn}。\n{asset_cn}是输电线路上的重要部件。\n请判断其状态。\n选项：A. 状态正常  B. 存在缺陷  C. 图像质量不足以判断\n请只输出选项字母。",
+      "T3_template": "图中所示为电力线路巡检中的{asset_cn}。\n{asset_cn}是输电线路上的重要部件。\n常见缺陷类型包括：{defect_defs}\n请判断图中{asset_cn}的缺陷类型。\n选项：{options}\n请只输出选项字母。"
+    },
+    "P3": {
+      "T2": "图中所示为电力线路巡检中的{asset_cn}。\n{asset_cn}是输电线路上的重要部件。\n判定要点：\n- 检查表面是否有锈蚀、变色\n- 检查结构是否完整（无缺失、无破损）\n- 检查是否有异物附着（如鸟巢）\n- 若图像模糊或遮挡严重，选择「图像质量不足以判断」\n请判断其状态。\n选项：A. 状态正常  B. 存在缺陷  C. 图像质量不足以判断\n请只输出选项字母。",
+      "T3_template": "图中所示为电力线路巡检中的{asset_cn}。\n{asset_cn}是输电线路上的重要部件。\n判定要点：\n- 锈蚀：表面出现红褐色或橙色腐蚀产物\n- 盖帽缺失：绝缘子顶端金属盖帽不存在\n- 鸟巢：有鸟类筑巢痕迹\n- 撕裂：部件出现物理断裂或撕裂\n- 油漆剥落：表面油漆层脱落\n- 若图像模糊或遮挡严重，选择「无法判断」\n请判断图中{asset_cn}的缺陷类型。\n选项：{options}\n请只输出选项字母。"
+    },
+    "P4": {
+      "T2": "（P4 = P3 + ICL 参考图，训练时不使用，推理时使用）\n图中所示为电力线路巡检中的{asset_cn}。\n请判断其状态。\n选项：A. 状态正常  B. 存在缺陷  C. 图像质量不足以判断\n请只输出选项字母。",
+      "T3_template": "（P4 = P3 + ICL 参考图，训练时不使用，推理时使用）\n图中所示为电力线路巡检中的{asset_cn}。\n请判断图中{asset_cn}的缺陷类型。\n选项：{options}\n请只输出选项字母。"
+    }
+  },
+  "notes": [
+    "P4 requires in-context reference images and is not used for training in the released pipeline.",
+    "All prompts include an explicit abstention/cannot-judge option."
+  ]
+}

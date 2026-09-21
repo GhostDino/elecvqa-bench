@@ -1,0 +1,37 @@
+{
+  "65536": {
+    "n": 7284,
+    "changed_pixel_vs_native": 4699,
+    "changed_prompt_vs_native": 1861,
+    "changed_patch_vs_native": 1861,
+    "changed_visual_tokens_vs_native": 1861
+  },
+  "131072": {
+    "n": 7284,
+    "changed_pixel_vs_native": 3753,
+    "changed_prompt_vs_native": 1861,
+    "changed_patch_vs_native": 1861,
+    "changed_visual_tokens_vs_native": 1861
+  },
+  "200704": {
+    "n": 7284,
+    "changed_pixel_vs_native": 2976,
+    "changed_prompt_vs_native": 1861,
+    "changed_patch_vs_native": 1861,
+    "changed_visual_tokens_vs_native": 1861
+  },
+  "401408": {
+    "n": 7284,
+    "changed_pixel_vs_native": 1982,
+    "changed_prompt_vs_native": 1861,
+    "changed_patch_vs_native": 1861,
+    "changed_visual_tokens_vs_native": 1861
+  },
+  "802816": {
+    "n": 7284,
+    "changed_pixel_vs_native": 1092,
+    "changed_prompt_vs_native": 837,
+    "changed_patch_vs_native": 837,
+    "changed_visual_tokens_vs_native": 837
+  }
+}

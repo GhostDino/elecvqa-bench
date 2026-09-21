@@ -1,0 +1,20 @@
+{
+  "T2": {
+    "n": 200,
+    "counts": {
+      "defect": 74,
+      "normal": 126
+    },
+    "defect_prevalence": 0.37
+  },
+  "T3": {
+    "n": 200,
+    "counts": {
+      "corrosão": 3,
+      "good": 177,
+      "missing-cap": 7,
+      "nest": 1,
+      "rust": 12
+    }
+  }
+}

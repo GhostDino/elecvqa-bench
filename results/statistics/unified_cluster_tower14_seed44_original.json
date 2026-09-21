@@ -1,0 +1,91 @@
+{
+  "n": 5536,
+  "n_clusters": 14,
+  "cluster_key": "_tower",
+  "classes": [
+    "corrosão",
+    "good",
+    "missing-cap",
+    "nest",
+    "rust",
+    "torned-up"
+  ],
+  "qwen_recall": {
+    "corrosão": 0.91,
+    "good": 0.998000799680128,
+    "missing-cap": 0.8793103448275862,
+    "nest": 1.0,
+    "rust": 0.9010989010989011,
+    "torned-up": 0.3333333333333333
+  },
+  "cnn_recall": {
+    "corrosão": 0.92,
+    "good": 0.9686125549780088,
+    "missing-cap": 0.8879310344827587,
+    "nest": 1.0,
+    "rust": 0.9304029304029304,
+    "torned-up": 1.0
+  },
+  "macro_difference": -0.11420052348729155,
+  "per_class_contribution": {
+    "corrosão": -0.001666666666666668,
+    "good": 0.004898040783686534,
+    "missing-cap": -0.0014367816091954144,
+    "nest": 0.0,
+    "rust": -0.004884004884004885,
+    "torned-up": -0.11111111111111112
+  },
+  "bootstrap": {
+    "n_requested": 10000,
+    "valid_replicates": 6256,
+    "invalid_replicates": 3744,
+    "seed": 42,
+    "macro_difference_ci95": [
+      -0.12586209350239896,
+      -0.10515271003625251
+    ],
+    "per_class_contribution_ci95": {
+      "corrosão": [
+        -0.002777777777777768,
+        0.0
+      ],
+      "good": [
+        0.0034685365207045133,
+        0.0070167435010884795
+      ],
+      "missing-cap": [
+        -0.010582010582010581,
+        0.005518763796909502
+      ],
+      "nest": [
+        0.0,
+        0.0
+      ],
+      "rust": [
+        -0.010572175963451476,
+        0.001947447311046513
+      ],
+      "torned-up": [
+        -0.11111111111111112,
+        -0.11111111111111112
+      ]
+    }
+  },
+  "bootstrap_p_value": 0.8312020460358056,
+  "permutation_within_cluster": {
+    "observed": -0.11420052348729155,
+    "p_value": 0.17018298170182983,
+    "n_permutations": 10000,
+    "seed": 42,
+    "mode": "within",
+    "permutation_mean": -0.001296785225668059
+  },
+  "permutation_cluster_level": {
+    "observed": -0.11420052348729155,
+    "p_value": 0.6482351764823517,
+    "n_permutations": 10000,
+    "seed": 42,
+    "mode": "cluster",
+    "permutation_mean": 4.0326323632476415e-05
+  }
+}

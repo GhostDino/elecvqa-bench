@@ -1,0 +1,19 @@
+{
+  "snapshot_date": "2026-08-24",
+  "models": [
+    {
+      "model_identifier": "Qwen3.8-27B",
+      "endpoint": "<internal-vllm-endpoint-redacted>",
+      "service_reported_model_root": "/root/data-tmp/Qwen3.8-27B",
+      "weight_revision_hash": null,
+      "reproducibility": "provenance snapshot only; not version-pinned"
+    },
+    {
+      "model_identifier": "Qwen3.5-122B-A10B-FP8",
+      "endpoint": "<internal-vllm-endpoint-redacted>",
+      "service_reported_model_root": null,
+      "weight_revision_hash": null,
+      "reproducibility": "provenance snapshot only; not version-pinned"
+    }
+  ]
+}

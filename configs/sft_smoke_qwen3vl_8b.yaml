@@ -1,0 +1,43 @@
+# Qwen3-VL-8B LoRA SFT 配置 (冒烟测试)
+# 用法: swift sft --config configs/sft_smoke_qwen3vl_8b.yaml
+
+model: Qwen/Qwen3-VL-8B-Instruct
+model_type: qwen3-vl
+model_cache_dir: /root/data-tmp/modelscope_cache/models/Qwen--Qwen3-VL-8B-Instruct/snapshots/master
+
+# LoRA 配置
+sft_type: lora
+lora_rank: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target_modules: ALL
+
+# 数据
+train_type: lora
+dataset: custom
+custom_train_dataset_path: work/sft/train.jsonl
+custom_val_dataset_path: work/sft/val.jsonl
+
+# 训练参数
+num_train_epochs: 1
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 2
+learning_rate: 1e-4
+lr_scheduler_type: cosine
+warmup_ratio: 0.03
+weight_decay: 0.01
+max_length: 4096
+
+# 显存优化
+gradient_checkpointing: true
+bf16: true
+
+# 日志与保存
+logging_steps: 2
+save_strategy: "no"
+save_total_limit: 1
+report_to: none
+
+# 输出
+output_dir: runs/sft_smoke_qwen3vl_8b
+seed: 42
